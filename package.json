@@ -1,7 +1,7 @@
 {
   "name": "vef2-2022-v2-synilausn",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Kynning á verkefni í tíma](https://youtu.be/2eikxqJ80pM).",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -45,5 +45,13 @@
     "stylelint": "^14.3.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^24.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WinterSoldier16/vef2-2022-v3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WinterSoldier16/vef2-2022-v3/issues"
+  },
+  "homepage": "https://github.com/WinterSoldier16/vef2-2022-v3#readme"
 }
