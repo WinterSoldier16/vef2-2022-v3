@@ -30,6 +30,7 @@
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "pg": "^8.7.1",
+    "win-node-env": "^0.6.1",
     "xss": "^1.0.10"
   },
   "devDependencies": {
