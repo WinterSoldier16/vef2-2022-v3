@@ -64,3 +64,14 @@ export async function createUser(username, password) {
 
   return null;
 }
+
+export async function listAllUsers() {
+  const q = `SELECT * FROM USERS`;
+  try {
+    const result = await query(q);
+    return result;
+  } catch (e) {
+    console.error('Gat ekki fundið alla Notendur');
+  }
+
+}

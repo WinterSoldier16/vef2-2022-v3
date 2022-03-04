@@ -6,14 +6,14 @@ import {
   listEvent,
   listEventByName,
   listEvents,
-  updateEvent,
+  updateEvent
 } from '../lib/db.js';
 import passport, { ensureLoggedIn } from '../lib/login.js';
 import { slugify } from '../lib/slugify.js';
 import {
   registrationValidationMiddleware,
   sanitizationMiddleware,
-  xssSanitizationMiddleware,
+  xssSanitizationMiddleware
 } from '../lib/validation.js';
 
 export const adminRouter = express.Router();
@@ -22,7 +22,7 @@ async function index(req, res) {
   const events = await listEvents();
   const { user: { username } = {} } = req || {};
 
-  return res.render('admin', {
+  return res.render({
     username,
     events,
     errors: [],
@@ -30,6 +30,15 @@ async function index(req, res) {
     title: 'Viðburðir — umsjón',
     admin: true,
   });
+
+  // return res.render('admin', {
+  //   username,
+  //   events,
+  //   errors: [],
+  //   data: {},
+  //   title: 'Viðburðir — umsjón',
+  //   admin: true,
+  // });
 }
 
 function login(req, res) {
@@ -46,7 +55,7 @@ function login(req, res) {
     req.session.messages = [];
   }
 
-  return res.render('login', { message, title: 'Innskráning' });
+  return res.json({ message, title: 'Innskráning' });
 }
 
 async function validationCheck(req, res, next) {
