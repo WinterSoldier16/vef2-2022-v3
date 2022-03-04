@@ -12,7 +12,7 @@ import { comparePasswords, findById, findByUsername } from './users.js';
  * @param {string} password Lykilorð til að athuga
  * @param {function} done Fall sem kallað er í með niðurstöðu
  */
-async function strat(username, password, done) {
+async function strat(username, name, password, done) {
   try {
     const user = await findByUsername(username);
 

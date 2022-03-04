@@ -54,16 +54,27 @@ app.use('/', indexRouter);
 /** Middleware sem sér um 404 villur. */
 app.use((req, res) => {
   const title = 'Síða fannst ekki';
-  res.status(404).render('error', { title });
+  res.status(404).json({ title });
 });
+
+// app.use((err, req, res, next) => {
+//   console.error(err);
+//   return res.status(500).json;
+// });
 
 /** Middleware sem sér um villumeðhöndlun. */
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   console.error(err);
   const title = 'Villa kom upp';
-  res.status(500).render('error', { title });
+  res.status(500).json({ title });
 });
+
+// app.use((err, req, res, next) => {
+//   console.error(err);
+//   //const title = 'Villa kom upp';
+//   return res.status(500).json;
+// });
 
 app.listen(port, () => {
   console.info(`Server running at http://localhost:${port}/`);
